@@ -63,8 +63,8 @@ class FullConnectedModel(abstract_model.NNModel):
         # create model
         model = Sequential()
         model.add(Dense(700, input_dim=self.num_bits, init='normal', activation='relu'))
-        model.add(Dense(50, input_dim=1000, init='normal', activation='relu'))
-        model.add(Dense(50, input_dim=50, init='normal', activation='relu'))
+        model.add(Dense(50, input_dim=700, init='normal', activation='relu'))
+        model.add(Dense(2, input_dim=50, init='normal', activation='relu'))
         model.add(Dense(num_classes, init='normal', activation='softmax'))
         # Compile model
         model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
